@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h3>Wider Gemini</h3>
+  
+  <div class="section">
+    <h4>Width Settings</h4>
+    <div class="toggle-group">
+      <label><input type="radio" name="mode" value="px"> Fixed (px)</label>
+      <label><input type="radio" name="mode" value="%"> Responsive (%)</label>
+    </div>
+    
+    <div id="presets-container" class="presets-row"></div>
+    
+    <div class="input-group">
+      <label for="custom-width">Custom Width:</label>
+      <input type="number" id="custom-width" min="10">
+      <span id="unit-label">%</span>
+    </div>
+    
+    <button id="edit-presets-btn">Edit Presets</button>
+    <div id="preset-editor" class="hidden">
+      <div id="preset-editor-rows"></div>
+      <button id="save-presets-btn">Save Presets</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h4>Reading Density</h4>
+    <div class="input-group">
+      <label for="compactness">Compactness:</label>
+      <input type="range" id="compactness" min="0" max="10" step="1">
+    </div>
+    
+    <details>
+      <summary>Advanced Density</summary>
+      <div class="input-group">
+        <label for="line-height">Line Height:</label>
+        <input type="number" id="line-height" step="0.1" min="0.8" max="3.0">
+      </div>
+      <div class="input-group">
+        <label for="para-spacing">Paragraph Spacing (em):</label>
+        <input type="number" id="para-spacing" step="0.1" min="0" max="3.0">
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h4>Code Formatting</h4>
+    <label class="checkbox-label">
+      <input type="checkbox" id="code-wrap"> Enable Automatic Code Wrapping
+    </label>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
